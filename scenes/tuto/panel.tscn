@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjas27qirxw4x"]
+
+[ext_resource type="Texture2D" uid="uid://cmpkx77jeu3jw" path="res://assets/sprites/world_tileset.png" id="1_elc2w"]
+[ext_resource type="Script" path="res://scripts/tuto/panel.gd" id="1_ty3dg"]
+[ext_resource type="FontFile" uid="uid://bkoa8x55oikbx" path="res://assets/fonts/PixelOperator8.ttf" id="3_bs3po"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6adt"]
+size = Vector2(14, 14)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cujr"]
+font = ExtResource("3_bs3po")
+font_size = 8
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ty3dg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -7)
+shape = SubResource("RectangleShape2D_j6adt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -8)
+texture = ExtResource("1_elc2w")
+region_enabled = true
+region_rect = Rect2(128, 48, 16, 16)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -66.0
+offset_top = -57.0
+offset_right = 67.0
+offset_bottom = -27.0
+text = "Placeholder message
+Lazy dev"
+label_settings = SubResource("LabelSettings_0cujr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

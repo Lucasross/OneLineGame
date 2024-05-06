@@ -1,0 +1,40 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://rugjgx4msrnt"]
+
+[ext_resource type="Texture2D" uid="uid://dwii5tu2ukiwx" path="res://assets/sprites/monsters/AcidOozeIdleSide.png" id="1_ajro3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm6r2"]
+atlas = ExtResource("1_ajro3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj1t5"]
+atlas = ExtResource("1_ajro3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pba1a"]
+atlas = ExtResource("1_ajro3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iocg3"]
+atlas = ExtResource("1_ajro3")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+resource_name = "slime_acid"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm6r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj1t5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pba1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iocg3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]

@@ -1,0 +1,40 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://ci7tq1csf3lwj"]
+
+[ext_resource type="Texture2D" uid="uid://cpr4dd17ehe1x" path="res://assets/sprites/monsters/DeathSlimeIdleSide.png" id="1_17lqi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1c43"]
+atlas = ExtResource("1_17lqi")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74v45"]
+atlas = ExtResource("1_17lqi")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yod0f"]
+atlas = ExtResource("1_17lqi")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw14p"]
+atlas = ExtResource("1_17lqi")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+resource_name = "slime_death"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1c43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74v45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yod0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw14p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]

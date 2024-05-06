@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://6nj3d642af8f"]
+
+[ext_resource type="Script" path="res://scripts/portal.gd" id="1_x4jjm"]
+[ext_resource type="Texture2D" uid="uid://6e5y3x6uqspf" path="res://assets/sprites/portal_blue.png" id="2_vicxn"]
+[ext_resource type="AudioStream" uid="uid://blucw2v8gpag4" path="res://assets/sounds/portal.wav" id="3_f4uo3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g6gnb"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enke5"]
+atlas = ExtResource("2_vicxn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oro3n"]
+atlas = ExtResource("2_vicxn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4ymr"]
+atlas = ExtResource("2_vicxn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xphho"]
+atlas = ExtResource("2_vicxn")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaym1"]
+atlas = ExtResource("2_vicxn")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ek21"]
+atlas = ExtResource("2_vicxn")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5161"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enke5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oro3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4ymr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xphho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaym1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ek21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Portal_Right" type="Area2D"]
+position = Vector2(208, -15)
+collision_mask = 2
+script = ExtResource("1_x4jjm")
+origin = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_g6gnb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p5161")
+autoplay = "default"
+frame = 1
+frame_progress = 0.971797
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_f4uo3")
+autoplay = true
+max_distance = 300.0
+attenuation = 4.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

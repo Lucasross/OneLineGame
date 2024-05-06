@@ -1,0 +1,165 @@
+[gd_scene load_steps=13 format=3 uid="uid://irbps74j7c5h"]
+
+[ext_resource type="Script" path="res://scripts/monster.gd" id="1_wmd6x"]
+[ext_resource type="AudioStream" uid="uid://b6u8kcbny6d5u" path="res://assets/sounds/hit.wav" id="2_oxalr"]
+[ext_resource type="AudioStream" uid="uid://bqhrbin6l2lbu" path="res://assets/sounds/dead.wav" id="3_d66sv"]
+[ext_resource type="Texture2D" uid="uid://di8ovmg016ma6" path="res://assets/sprites/UI/Monster_Lifebar_Outline.png" id="3_mfsyo"]
+[ext_resource type="Texture2D" uid="uid://dg64wtms7i0gu" path="res://assets/sprites/UI/Monster_Lifebar.png" id="4_bpow3"]
+[ext_resource type="Script" path="res://scripts/monster_health_bar.gd" id="5_s5d8c"]
+[ext_resource type="FontFile" uid="uid://bkoa8x55oikbx" path="res://assets/fonts/PixelOperator8.ttf" id="7_jiu7w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7q1x"]
+radius = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_vqp1q"]
+font = ExtResource("7_jiu7w")
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0.5, 1)
+
+[sub_resource type="Animation" id="Animation_ubdnu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qnfap"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"destroy"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pw4r2"]
+_data = {
+"RESET": SubResource("Animation_ubdnu"),
+"die": SubResource("Animation_qnfap")
+}
+
+[node name="Monster" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_wmd6x")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("2_oxalr")
+deathSound = ExtResource("3_d66sv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_l7q1x")
+
+[node name="HealthBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("monster")]
+offset_left = -11.0
+offset_top = -18.0
+offset_right = 11.0
+offset_bottom = -15.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+texture_under = ExtResource("3_mfsyo")
+texture_progress = ExtResource("4_bpow3")
+script = ExtResource("5_s5d8c")
+monster = NodePath("..")
+
+[node name="Label" type="Label" parent="HealthBar"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 28.0
+offset_bottom = 12.0
+scale = Vector2(0.25, 0.25)
+label_settings = SubResource("LabelSettings_vqp1q")
+vertical_alignment = 1
+
+[node name="DamageVfxTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pw4r2")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_player_entered"]

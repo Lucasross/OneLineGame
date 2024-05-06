@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://pm1owk3rsegx"]
+
+[ext_resource type="Texture2D" uid="uid://bce5bc0afd1dy" path="res://assets/sprites/monsters/raton_san.png" id="1_t24uo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wje2e"]
+atlas = ExtResource("1_t24uo")
+region = Rect2(0, 0, 76, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n8um"]
+atlas = ExtResource("1_t24uo")
+region = Rect2(76, 0, 76, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j5dq"]
+atlas = ExtResource("1_t24uo")
+region = Rect2(152, 0, 76, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7k4b"]
+atlas = ExtResource("1_t24uo")
+region = Rect2(228, 0, 76, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frbul"]
+atlas = ExtResource("1_t24uo")
+region = Rect2(304, 0, 76, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su7kp"]
+atlas = ExtResource("1_t24uo")
+region = Rect2(380, 0, 76, 63)
+
+[resource]
+resource_name = "raton_san"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wje2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n8um")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j5dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7k4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frbul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su7kp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4b04o1ar87qo"]
+
+[ext_resource type="Script" path="res://scripts/MonsterArea.gd" id="1_kxvnq"]
+[ext_resource type="SpriteFrames" uid="uid://cyxqy6i3l7kmb" path="res://tres/monsters/slime_green.tres" id="2_0d4f2"]
+
+[node name="MonsterArea" type="Node2D"]
+script = ExtResource("1_kxvnq")
+possibilities = Array[SpriteFrames]([ExtResource("2_0d4f2")])

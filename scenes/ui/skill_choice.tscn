@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqcf4x86bgjs4"]
+
+[ext_resource type="Texture2D" uid="uid://l7cqdb63gntn" path="res://assets/sprites/UI/frame_background_3.png" id="1_qke3c"]
+[ext_resource type="Texture2D" uid="uid://c3w485vxjxx2q" path="res://assets/sprites/UI/sword.png" id="2_0ricx"]
+[ext_resource type="Script" path="res://scripts/skill_choice.gd" id="2_vaeeo"]
+[ext_resource type="Texture2D" uid="uid://dmjfwo78fjr6t" path="res://assets/sprites/UI/spritesheet_button.png" id="3_6ko6j"]
+[ext_resource type="FontFile" uid="uid://bkoa8x55oikbx" path="res://assets/fonts/PixelOperator8.ttf" id="4_8mqno"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h47sk"]
+atlas = ExtResource("3_6ko6j")
+region = Rect2(0, 0, 30, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jliem"]
+atlas = ExtResource("3_6ko6j")
+region = Rect2(0, 16, 30, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lply"]
+atlas = ExtResource("3_6ko6j")
+region = Rect2(0, 32, 30, 14)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cl25e"]
+font = ExtResource("4_8mqno")
+font_size = 24
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="SkillChoice" type="NinePatchRect"]
+custom_minimum_size = Vector2(30, 30)
+texture = ExtResource("1_qke3c")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("2_vaeeo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0ricx")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = 2.0
+offset_right = 15.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_h47sk")
+texture_pressed = SubResource("AtlasTexture_jliem")
+texture_hover = SubResource("AtlasTexture_4lply")
+
+[node name="button_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = 4.0
+offset_right = 126.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+text = "Damage"
+label_settings = SubResource("LabelSettings_cl25e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_level_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_right = 144.0
+offset_bottom = 33.0
+grow_horizontal = 2
+scale = Vector2(0.2, 0.2)
+text = "14/20"
+label_settings = SubResource("LabelSettings_cl25e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_button_pressed"]
