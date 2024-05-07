@@ -161,7 +161,6 @@ baseColor = Color(1, 1, 1, 1)
 damageColor = Color(0.84, 0.0756, 0.0756, 1)
 hitSound = ExtResource("2_oxalr")
 deathSound = ExtResource("3_d66sv")
-potion_loot_chance = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 

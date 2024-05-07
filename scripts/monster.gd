@@ -39,7 +39,7 @@ var experience
 @export_category("Options")
 @export_range(0, 2) var height_to_distance_ratio := 0.8
 @export_exp_easing var easing := 0.7
-@export_range(0, 100) var potion_loot_chance := 0.05
+@export_range(0, 1) var potion_loot_chance := 0.05
 
 #references
 @onready var animated_sprite = $AnimatedSprite2D
@@ -125,6 +125,9 @@ func die():
 	animation_player.play("die")
 	animated_sprite_die.visible = true
 	animated_sprite_die.play("explosion")
+	var rng = RandomNumberGenerator.new()
+	if rng.randf() < potion_loot_chance:
+		PlayerData.potion_count += 1
 
 func destroy():
 	queue_free()

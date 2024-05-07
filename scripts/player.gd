@@ -32,6 +32,7 @@ var regen = 0
 @onready var hit_timer = $HitTimer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
+@onready var animation_player_levelup = $LevelUp/AnimationPlayer_levelup
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -104,6 +105,7 @@ func on_level_up():
 	PlayerData.experience -= MathCurve.get_required_experience(PlayerData.level - 1)
 	health = max_health
 	PlayerData.skillPoint += 2
+	animation_player_levelup.play("level_up")
 	onLevelChanged.emit()
 	onSkillPointChanged.emit()
 	
