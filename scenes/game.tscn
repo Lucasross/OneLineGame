@@ -6,7 +6,6 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0i128")
-reset_save = false
 start_side = -1
 
 [node name="Player" parent="." instance=ExtResource("1_qjjjg")]
