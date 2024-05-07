@@ -57,3 +57,8 @@ func load_player():
 		
 	var save_data = json.get_data()
 	playerData.load(save_data)
+
+func reset():
+	print("test")
+	playerData = PlayerDataSave.new()
+	save_player()

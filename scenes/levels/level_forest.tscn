@@ -428,7 +428,7 @@ rightScene = 1
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lig3f")
 format = 2
-layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 0, 8, 0, 0, 9, 0, 1, 10, 0, 1, 11, 0, 0, 12, 0, 1, 65534, 0, 1, -2, 0, 1, -65538, 0, 1, -131074, 65536, 1, -131075, 65536, 1, -65539, 65536, 1, -3, 0, 1, 65533, 0, 1, -196610, 0, 0, -196611, 0, 0, 131072, 65536, 1, 65538, 65536, 1, 131078, 65536, 1, 65545, 65536, 1, 65543, 65536, 1, 65542, 65536, 1, 131083, 65536, 1, 131084, 65536, 1, 131070, 0, 1, 131071, 0, 1, 65536, 0, 1, 65537, 0, 1, 131073, 0, 1, 131074, 0, 1, 65539, 0, 1, 131075, 0, 1, 65540, 0, 1, 65541, 0, 1, 131079, 0, 1, 131080, 0, 1, 65544, 0, 1, 65546, 0, 1, 65547, 0, 1, 65548, 0, 1, 196607, 0, 1, 131082, 0, 1, 196619, 0, 1, 196620, 0, 1, 196608, 0, 1, 196609, 0, 1, 196610, 0, 1, 131069, 0, 1, 196606, 0, 1, 262143, 0, 1, -65533, 0, 5, -65529, 0, 5, -262141, 0, 3, -196601, 0, 3, -196605, 0, 4, -131069, 0, 4, -131065, 0, 4, -65535, 65536, 3, -65530, 65536, 3, -65534, 65536, 6, -1, 65536, 4, -65525, 65536, 4, -65526, 65536, 6, -65527, 0, 7, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 1, 23, 0, 0, 25, 0, 0, 27, 0, 0, 26, 0, 0, 17, 0, 1, 22, 0, 1, 24, 0, 1, 131087, 65536, 0, 65552, 65536, 0, 131088, 65536, 0, 131091, 65536, 0, 196627, 65536, 0, 196628, 65536, 0, 131095, 65536, 0, 131096, 65536, 0, 131097, 65536, 0, 131092, 65536, 1, 65559, 65536, 1, 65549, 0, 1, 131085, 0, 1, 196621, 0, 1, 131086, 0, 1, 65550, 0, 1, 65551, 0, 1, 196624, 0, 1, 196625, 0, 1, 131089, 0, 1, 65553, 0, 1, 65554, 0, 1, 131090, 0, 1, 65555, 0, 1, 65556, 0, 1, 65557, 0, 1, 131093, 0, 1, 131094, 0, 1, 65558, 0, 1, 196631, 0, 1, 65560, 0, 1, 65561, 0, 1, 65562, 0, 1, 196632, 0, 1, 262156, 0, 1, 262157, 0, 1, 196622, 0, 1, 28, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 36, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 43, 0, 0, 29, 0, 1, 30, 0, 1, 35, 0, 1, 37, 0, 1, 42, 0, 1, 131101, 65536, 0, 131102, 65536, 0, 65566, 65536, 0, 131105, 65536, 1, 65570, 65536, 1, 131110, 65536, 1, 131111, 65536, 1, 196646, 65536, 0, 65577, 65536, 0, 65563, 0, 1, 131099, 0, 1, 131100, 0, 1, 65564, 0, 1, 65565, 0, 1, 196637, 0, 1, 196638, 0, 1, 65567, 0, 1, 131103, 0, 1, 65568, 0, 1, 65569, 0, 1, 131104, 0, 1, 65571, 0, 1, 65572, 0, 1, 131109, 0, 1, 65573, 0, 1, 65574, 0, 1, 65575, 0, 1, 65576, 0, 1, 65578, 0, 1, 131113, 0, 1)
+layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 0, 8, 0, 0, 9, 0, 1, 10, 0, 1, 11, 0, 0, 12, 0, 1, 65534, 0, 1, -2, 0, 1, -65538, 0, 1, -131074, 65536, 1, -131075, 65536, 1, -65539, 65536, 1, -3, 0, 1, 65533, 0, 1, -196610, 0, 0, -196611, 0, 0, 131072, 65536, 1, 65538, 65536, 1, 131078, 65536, 1, 65545, 65536, 1, 65543, 65536, 1, 65542, 65536, 1, 131083, 65536, 1, 131084, 65536, 1, 131070, 0, 1, 131071, 0, 1, 65536, 0, 1, 65537, 0, 1, 131073, 0, 1, 131074, 0, 1, 65539, 0, 1, 131075, 0, 1, 65540, 0, 1, 65541, 0, 1, 131079, 0, 1, 131080, 0, 1, 65544, 0, 1, 65546, 0, 1, 65547, 0, 1, 65548, 0, 1, 196607, 0, 1, 131082, 0, 1, 196619, 0, 1, 196620, 0, 1, 196608, 0, 1, 196609, 0, 1, 196610, 0, 1, 131069, 0, 1, 196606, 0, 1, 262143, 0, 1, -65533, 0, 5, -65529, 0, 5, -262141, 0, 3, -196601, 0, 3, -196605, 0, 4, -131069, 0, 4, -131065, 0, 4, -65535, 65536, 3, -65530, 65536, 3, -65534, 65536, 6, -1, 65536, 4, -65525, 65536, 4, -65526, 65536, 6, -65527, 0, 7, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 1, 23, 0, 0, 25, 0, 0, 27, 0, 0, 26, 0, 0, 17, 0, 1, 22, 0, 1, 24, 0, 1, 131087, 65536, 0, 65552, 65536, 0, 131088, 65536, 0, 131091, 65536, 0, 196627, 65536, 0, 196628, 65536, 0, 131095, 65536, 0, 131096, 65536, 0, 131097, 65536, 0, 131092, 65536, 1, 65559, 65536, 1, 65549, 0, 1, 131085, 0, 1, 196621, 0, 1, 131086, 0, 1, 65550, 0, 1, 65551, 0, 1, 196624, 0, 1, 196625, 0, 1, 131089, 0, 1, 65553, 0, 1, 65554, 0, 1, 131090, 0, 1, 65555, 0, 1, 65556, 0, 1, 65557, 0, 1, 131093, 0, 1, 131094, 0, 1, 65558, 0, 1, 196631, 0, 1, 65560, 0, 1, 65561, 0, 1, 65562, 0, 1, 196632, 0, 1, 262156, 0, 1, 262157, 0, 1, 196622, 0, 1, 28, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 36, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 43, 0, 0, 29, 0, 1, 30, 0, 1, 35, 0, 1, 37, 0, 1, 42, 0, 1, 131101, 65536, 0, 131102, 65536, 0, 65566, 65536, 0, 131105, 65536, 1, 65570, 65536, 1, 131110, 65536, 1, 131111, 65536, 1, 196646, 65536, 0, 65577, 65536, 0, 65563, 0, 1, 131099, 0, 1, 131100, 0, 1, 65564, 0, 1, 65565, 0, 1, 196637, 0, 1, 196638, 0, 1, 65567, 0, 1, 131103, 0, 1, 65568, 0, 1, 65569, 0, 1, 131104, 0, 1, 65571, 0, 1, 65572, 0, 1, 131109, 0, 1, 65573, 0, 1, 65574, 0, 1, 65575, 0, 1, 65576, 0, 1, 65578, 0, 1, 131113, 0, 1, 44, 0, 0, 45, 0, 0, 48, 0, 0, 49, 0, 0, 50, 0, 0, 51, 0, 0, 53, 0, 0, 46, 0, 1, 47, 0, 1, 52, 0, 1, 65580, 0, 1, 131116, 0, 1, 131117, 0, 1, 131118, 0, 1, 65582, 0, 1, 65583, 0, 1, 131119, 0, 1, 131120, 0, 1, 131121, 0, 1, 131122, 0, 1, 196658, 0, 1, 131123, 0, 1, 65587, 0, 1, 65588, 0, 1, 65581, 65536, 1, 65585, 65536, 1, 131115, 65536, 1, 196654, 65536, 1, 65579, 65536, 0, 196653, 65536, 0, 65584, 65536, 0, 65586, 65536, 0)
 
 [node name="Panels" type="Node2D" parent="."]
 
@@ -457,17 +457,22 @@ Press [Space]
 to drink."
 give_potion = true
 
-[node name="Panel_adventure" parent="Panels" instance=ExtResource("7_rjqar")]
+[node name="Panel_Level" parent="Panels" instance=ExtResource("7_rjqar")]
 position = Vector2(537, 0)
-panel_text = "Ready to
-adventure ?!"
+panel_text = "Congrats, you're
+level 2!"
+
+[node name="Panel_Adventure" parent="Panels" instance=ExtResource("7_rjqar")]
+position = Vector2(664, 0)
+panel_text = "Ready to 
+adventure ?"
 
 [node name="Portal_Left" parent="." instance=ExtResource("9_uqua1")]
 visible = false
 triggerable = false
 
 [node name="Portal_Right" parent="." instance=ExtResource("9_obq8u")]
-position = Vector2(599, -15)
+position = Vector2(728, -15)
 
 [node name="MonsterArea" parent="." instance=ExtResource("6_4nmgv")]
 position = Vector2(216, 0)
@@ -483,7 +488,6 @@ baseColor = Color(1, 1, 1, 1)
 damageColor = Color(0.84, 0.0756, 0.0756, 1)
 hitSound = ExtResource("13_72w74")
 deathSound = ExtResource("14_hg0hf")
-potion_loot_chance = 43.8
 
 [node name="MonsterArea2" parent="." instance=ExtResource("6_4nmgv")]
 position = Vector2(280, 0)
@@ -500,7 +504,6 @@ baseColor = Color(1, 1, 1, 1)
 damageColor = Color(0.84, 0.0756, 0.0756, 1)
 hitSound = ExtResource("13_72w74")
 deathSound = ExtResource("14_hg0hf")
-potion_loot_chance = 43.8
 
 [node name="slime_acid (lv_1)" type="Area2D" parent="MonsterArea2" instance=ExtResource("11_0gn1h")]
 position = Vector2(32, 0)
@@ -511,7 +514,6 @@ baseColor = Color(1, 1, 1, 1)
 damageColor = Color(0.84, 0.0756, 0.0756, 1)
 hitSound = ExtResource("13_72w74")
 deathSound = ExtResource("14_hg0hf")
-potion_loot_chance = 43.8
 
 [node name="MonsterArea3" parent="." instance=ExtResource("6_4nmgv")]
 position = Vector2(376, 0)
@@ -528,21 +530,9 @@ baseColor = Color(1, 1, 1, 1)
 damageColor = Color(0.84, 0.0756, 0.0756, 1)
 hitSound = ExtResource("13_72w74")
 deathSound = ExtResource("14_hg0hf")
-potion_loot_chance = 43.8
-
-[node name="@Area2D@17613" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
-position = Vector2(32, 0)
-collision_mask = 2
-script = ExtResource("12_raf8p")
-sprite = ExtResource("9_rrlla")
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("13_72w74")
-deathSound = ExtResource("14_hg0hf")
-potion_loot_chance = 43.8
 
 [node name="slime_red (lv_1)" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
-position = Vector2(64, 0)
+position = Vector2(32, 0)
 collision_mask = 2
 script = ExtResource("12_raf8p")
 sprite = ExtResource("10_s3ull")
@@ -550,9 +540,18 @@ baseColor = Color(1, 1, 1, 1)
 damageColor = Color(0.84, 0.0756, 0.0756, 1)
 hitSound = ExtResource("13_72w74")
 deathSound = ExtResource("14_hg0hf")
-potion_loot_chance = 43.8
 
-[node name="@Area2D@17614" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
+[node name="slime_death (lv_1)" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
+position = Vector2(64, 0)
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("8_vuom4")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+
+[node name="@Area2D@17613" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
 position = Vector2(96, 0)
 collision_mask = 2
 script = ExtResource("12_raf8p")
@@ -561,24 +560,61 @@ baseColor = Color(1, 1, 1, 1)
 damageColor = Color(0.84, 0.0756, 0.0756, 1)
 hitSound = ExtResource("13_72w74")
 deathSound = ExtResource("14_hg0hf")
-potion_loot_chance = 43.8
 
-[node name="@Area2D@17615" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
+[node name="@Area2D@17614" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
 position = Vector2(128, 0)
 collision_mask = 2
 script = ExtResource("12_raf8p")
-sprite = ExtResource("10_s3ull")
+sprite = ExtResource("9_rrlla")
 baseColor = Color(1, 1, 1, 1)
 damageColor = Color(0.84, 0.0756, 0.0756, 1)
 hitSound = ExtResource("13_72w74")
 deathSound = ExtResource("14_hg0hf")
-potion_loot_chance = 43.8
+
+[node name="MonsterArea4" parent="." instance=ExtResource("6_4nmgv")]
+position = Vector2(568, 0)
+random = true
+quantity = 3
+level_range = Vector2i(1, 1)
+possibilities = Array[SpriteFrames]([ExtResource("7_4l54t"), ExtResource("8_vuom4"), ExtResource("9_rrlla"), ExtResource("10_s3ull")])
+
+[node name="slime_death (lv_1)" type="Area2D" parent="MonsterArea4" instance=ExtResource("11_0gn1h")]
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("8_vuom4")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+
+[node name="@Area2D@17615" type="Area2D" parent="MonsterArea4" instance=ExtResource("11_0gn1h")]
+position = Vector2(32, 0)
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("8_vuom4")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+
+[node name="slime_green (lv_1)" type="Area2D" parent="MonsterArea4" instance=ExtResource("11_0gn1h")]
+position = Vector2(64, 0)
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("9_rrlla")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
 
 [connection signal="body_entered" from="MonsterArea/slime_red (lv_1)" to="MonsterArea/slime_red (lv_1)" method="_on_player_entered"]
 [connection signal="body_entered" from="MonsterArea2/slime_red (lv_1)" to="MonsterArea2/slime_red (lv_1)" method="_on_player_entered"]
 [connection signal="body_entered" from="MonsterArea2/slime_acid (lv_1)" to="MonsterArea2/slime_acid (lv_1)" method="_on_player_entered"]
 [connection signal="body_entered" from="MonsterArea3/slime_green (lv_1)" to="MonsterArea3/slime_green (lv_1)" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea3/@Area2D@17613" to="MonsterArea3/@Area2D@17613" method="_on_player_entered"]
 [connection signal="body_entered" from="MonsterArea3/slime_red (lv_1)" to="MonsterArea3/slime_red (lv_1)" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea3/slime_death (lv_1)" to="MonsterArea3/slime_death (lv_1)" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea3/@Area2D@17613" to="MonsterArea3/@Area2D@17613" method="_on_player_entered"]
 [connection signal="body_entered" from="MonsterArea3/@Area2D@17614" to="MonsterArea3/@Area2D@17614" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea3/@Area2D@17615" to="MonsterArea3/@Area2D@17615" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea4/slime_death (lv_1)" to="MonsterArea4/slime_death (lv_1)" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea4/@Area2D@17615" to="MonsterArea4/@Area2D@17615" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea4/slime_green (lv_1)" to="MonsterArea4/slime_green (lv_1)" method="_on_player_entered"]
