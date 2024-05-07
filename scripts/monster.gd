@@ -39,12 +39,15 @@ var experience
 @export_category("Options")
 @export_range(0, 2) var height_to_distance_ratio := 0.8
 @export_exp_easing var easing := 0.7
+@export_range(0, 100) var potion_loot_chance := 0.05
 
 #references
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var damage_vfx_timer = $DamageVfxTimer
 @onready var audio = $Audio
 @onready var animation_player = $AnimationPlayer
+@onready var animated_sprite_die = $AnimatedSprite2D_die
+
 var player: Player
 
 #misc
@@ -97,8 +100,7 @@ func _on_player_entered(_body):
 	var direction = get_direction(player)
 	var power = lerp(MIN_POWER, MAX_POWER, ease(get_percent_removed(player), easing))
 	if current_health <= 0:
-		player.increase_experience(get_experience(PlayerData.level))
-		animation_player.play("die")
+		die()
 	player.damage(damage, {power = Vector2(power * direction, -power * height_to_distance_ratio), die = current_health <= 0})
 
 func get_direction(body):
@@ -117,6 +119,12 @@ func get_experience(player_level: int):
 		return experience * decrease_factor
 	
 	return experience
-	
+
+func die():
+	player.increase_experience(get_experience(PlayerData.level))
+	animation_player.play("die")
+	animated_sprite_die.visible = true
+	animated_sprite_die.play("explosion")
+
 func destroy():
 	queue_free()

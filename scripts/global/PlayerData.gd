@@ -1,5 +1,6 @@
 extends Node
 
+signal on_potion_changed
 
 var playerData = PlayerDataSave.new()
 
@@ -20,6 +21,13 @@ var skillPoint: int = 0 :
 		return playerData.skillPoint
 	set(value):
 		playerData.skillPoint = value
+		save_player()
+var potion_count: int = 0:
+	get:
+		return playerData.potion_count
+	set(value):
+		playerData.potion_count = value
+		on_potion_changed.emit()
 		save_player()
 func get_stat(stat: Data.Stat):
 	return playerData.stats[stat]

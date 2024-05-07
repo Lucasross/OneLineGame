@@ -18,7 +18,12 @@ const SPEED = 100.0
 
 # Statistics
 var max_health = 0
-var health = max_health
+var health = max_health :
+	get: 
+		return health
+	set(value):
+		health = value
+		onHealthChanged.emit()
 var strenght = 0
 var speed = 0
 var regen = 0
@@ -37,7 +42,6 @@ func _ready():
 	
 	# Health refresh
 	health = max_health
-	onHealthChanged.emit()
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -74,14 +78,12 @@ func _physics_process(delta):
 	if health < max_health:
 		health += ceili(max_health * (regen + base_regen)) * delta
 		health = clamp(health, 0, max_health)
-		onHealthChanged.emit()
 	
 	move_and_slide()
 
 func damage(hitdamage, fightResult):
 	if hit_timer.time_left == 0:
 		health -= hitdamage
-		onHealthChanged.emit()
 		hit_timer.start()
 		if health <= 0:
 			velocity = fightResult.power * 2
@@ -101,7 +103,6 @@ func on_level_up():
 	PlayerData.level += 1
 	PlayerData.experience -= MathCurve.get_required_experience(PlayerData.level - 1)
 	health = max_health
-	onHealthChanged.emit()
 	PlayerData.skillPoint += 2
 	onLevelChanged.emit()
 	onSkillPointChanged.emit()
@@ -122,7 +123,6 @@ func restart_stage():
 
 func reset_player():
 	health = max_health
-	onHealthChanged.emit()
 	velocity = Vector2.ZERO
 	playable = true
 	animation_player.play("RESET")

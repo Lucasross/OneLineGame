@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnuldvp2syuit"]
+[gd_scene load_steps=17 format=3 uid="uid://cnuldvp2syuit"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_i6qvo"]
 [ext_resource type="Texture2D" uid="uid://cmpkx77jeu3jw" path="res://assets/sprites/world_tileset.png" id="1_tg5u0"]
@@ -10,6 +10,10 @@
 [ext_resource type="SpriteFrames" uid="uid://cyxqy6i3l7kmb" path="res://tres/monsters/slime_green.tres" id="9_rrlla"]
 [ext_resource type="PackedScene" uid="uid://daxc2s6eyroke" path="res://scenes/levels/portal_left.tscn" id="9_uqua1"]
 [ext_resource type="SpriteFrames" uid="uid://crixqc0poiw30" path="res://tres/monsters/slime_red.tres" id="10_s3ull"]
+[ext_resource type="PackedScene" uid="uid://irbps74j7c5h" path="res://scenes/monster.tscn" id="11_0gn1h"]
+[ext_resource type="Script" path="res://scripts/monster.gd" id="12_raf8p"]
+[ext_resource type="AudioStream" uid="uid://b6u8kcbny6d5u" path="res://assets/sounds/hit.wav" id="13_72w74"]
+[ext_resource type="AudioStream" uid="uid://bqhrbin6l2lbu" path="res://assets/sounds/dead.wav" id="14_hg0hf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbe16"]
 texture = ExtResource("1_tg5u0")
@@ -451,6 +455,7 @@ position = Vector2(344, 0)
 panel_text = "Here a potion!
 Press [Space]
 to drink."
+give_potion = true
 
 [node name="Panel_adventure" parent="Panels" instance=ExtResource("7_rjqar")]
 position = Vector2(537, 0)
@@ -470,6 +475,16 @@ random = true
 level_range = Vector2i(1, 1)
 possibilities = Array[SpriteFrames]([ExtResource("7_4l54t"), ExtResource("8_vuom4"), ExtResource("9_rrlla"), ExtResource("10_s3ull")])
 
+[node name="slime_green (lv_1)" type="Area2D" parent="MonsterArea" instance=ExtResource("11_0gn1h")]
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("9_rrlla")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+potion_loot_chance = null
+
 [node name="MonsterArea2" parent="." instance=ExtResource("6_4nmgv")]
 position = Vector2(280, 0)
 random = true
@@ -477,9 +492,93 @@ quantity = 2
 level_range = Vector2i(1, 1)
 possibilities = Array[SpriteFrames]([ExtResource("7_4l54t"), ExtResource("8_vuom4"), ExtResource("9_rrlla"), ExtResource("10_s3ull")])
 
+[node name="slime_acid (lv_1)" type="Area2D" parent="MonsterArea2" instance=ExtResource("11_0gn1h")]
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("7_4l54t")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+potion_loot_chance = null
+
+[node name="@Area2D@85638" type="Area2D" parent="MonsterArea2" instance=ExtResource("11_0gn1h")]
+position = Vector2(32, 0)
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("7_4l54t")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+potion_loot_chance = null
+
 [node name="MonsterArea3" parent="." instance=ExtResource("6_4nmgv")]
 position = Vector2(376, 0)
 random = true
 quantity = 5
 level_range = Vector2i(1, 1)
 possibilities = Array[SpriteFrames]([ExtResource("7_4l54t"), ExtResource("8_vuom4"), ExtResource("9_rrlla"), ExtResource("10_s3ull")])
+
+[node name="slime_death (lv_1)" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("8_vuom4")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+potion_loot_chance = null
+
+[node name="slime_green (lv_1)" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
+position = Vector2(32, 0)
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("9_rrlla")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+potion_loot_chance = null
+
+[node name="@Area2D@85639" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
+position = Vector2(64, 0)
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("9_rrlla")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+potion_loot_chance = null
+
+[node name="@Area2D@85640" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
+position = Vector2(96, 0)
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("8_vuom4")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+potion_loot_chance = null
+
+[node name="slime_red (lv_1)" type="Area2D" parent="MonsterArea3" instance=ExtResource("11_0gn1h")]
+position = Vector2(128, 0)
+collision_mask = 2
+script = ExtResource("12_raf8p")
+sprite = ExtResource("10_s3ull")
+baseColor = Color(1, 1, 1, 1)
+damageColor = Color(0.84, 0.0756, 0.0756, 1)
+hitSound = ExtResource("13_72w74")
+deathSound = ExtResource("14_hg0hf")
+potion_loot_chance = null
+
+[connection signal="body_entered" from="MonsterArea/slime_green (lv_1)" to="MonsterArea/slime_green (lv_1)" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea2/slime_acid (lv_1)" to="MonsterArea2/slime_acid (lv_1)" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea2/@Area2D@85638" to="MonsterArea2/@Area2D@85638" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea3/slime_death (lv_1)" to="MonsterArea3/slime_death (lv_1)" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea3/slime_green (lv_1)" to="MonsterArea3/slime_green (lv_1)" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea3/@Area2D@85639" to="MonsterArea3/@Area2D@85639" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea3/@Area2D@85640" to="MonsterArea3/@Area2D@85640" method="_on_player_entered"]
+[connection signal="body_entered" from="MonsterArea3/slime_red (lv_1)" to="MonsterArea3/slime_red (lv_1)" method="_on_player_entered"]

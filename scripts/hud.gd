@@ -13,10 +13,12 @@ func _ready():
 	levelup_button.init(player)
 	skill_view.init(player)
 
-
 func _on_level_button_pressed():
 	skill_view.visible = true
 
-
 func _on_avatar_button_pressed():
 	skill_view.visible = !skill_view.visible
+
+func _on_potion_request():
+	PlayerData.potion_count -= 1
+	player.health += player.max_health * 0.8

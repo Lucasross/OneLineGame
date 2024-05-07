@@ -382,13 +382,13 @@ modulate = Color(0, 0, 0, 0.705882)
 layout_mode = 0
 offset_right = 26.0
 offset_bottom = 24.0
-max_value = 1.0
+max_value = 0.5
 step = 0.01
 fill_mode = 5
 texture_progress = ExtResource("2_6b1qd")
 
 [node name="Timer" type="Timer" parent="PotionHud/PixelScaler/TextureButton"]
-one_shot = true
+wait_time = 0.5
 
 [connection signal="visibility_changed" from="SkillView" to="SkillView" method="_on_visibility_changed"]
 [connection signal="pressed" from="SkillView/PixelScaler/NinePatchRect/TextureButton" to="SkillView/PixelScaler/NinePatchRect/TextureButton" method="_on_pressed"]

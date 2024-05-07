@@ -1,12 +1,52 @@
-[gd_scene load_steps=13 format=3 uid="uid://irbps74j7c5h"]
+[gd_scene load_steps=19 format=3 uid="uid://irbps74j7c5h"]
 
 [ext_resource type="Script" path="res://scripts/monster.gd" id="1_wmd6x"]
 [ext_resource type="AudioStream" uid="uid://b6u8kcbny6d5u" path="res://assets/sounds/hit.wav" id="2_oxalr"]
 [ext_resource type="AudioStream" uid="uid://bqhrbin6l2lbu" path="res://assets/sounds/dead.wav" id="3_d66sv"]
 [ext_resource type="Texture2D" uid="uid://di8ovmg016ma6" path="res://assets/sprites/UI/Monster_Lifebar_Outline.png" id="3_mfsyo"]
+[ext_resource type="Texture2D" uid="uid://xgiqcsuvfaj3" path="res://assets/sprites/animation/explosion.png" id="4_b0do5"]
 [ext_resource type="Texture2D" uid="uid://dg64wtms7i0gu" path="res://assets/sprites/UI/Monster_Lifebar.png" id="4_bpow3"]
 [ext_resource type="Script" path="res://scripts/monster_health_bar.gd" id="5_s5d8c"]
 [ext_resource type="FontFile" uid="uid://bkoa8x55oikbx" path="res://assets/fonts/PixelOperator8.ttf" id="7_jiu7w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7et5"]
+atlas = ExtResource("4_b0do5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is22w"]
+atlas = ExtResource("4_b0do5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c12rg"]
+atlas = ExtResource("4_b0do5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj7dm"]
+atlas = ExtResource("4_b0do5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bfql0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7et5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is22w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c12rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj7dm")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 12.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7q1x"]
 radius = 5.0
@@ -121,8 +161,17 @@ baseColor = Color(1, 1, 1, 1)
 damageColor = Color(0.84, 0.0756, 0.0756, 1)
 hitSound = ExtResource("2_oxalr")
 deathSound = ExtResource("3_d66sv")
+potion_loot_chance = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="AnimatedSprite2D_die" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_bfql0")
+animation = &"explosion"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
