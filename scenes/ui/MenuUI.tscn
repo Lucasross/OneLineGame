@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccunkf6l6fxuo"]
+
+[ext_resource type="Texture2D" uid="uid://dmjfwo78fjr6t" path="res://assets/sprites/UI/spritesheet_button.png" id="1_dhgbv"]
+[ext_resource type="Script" path="res://scripts/menu_ui.gd" id="1_rgsfm"]
+[ext_resource type="Texture2D" uid="uid://d04r3xlcrqy0s" path="res://assets/sprites/UI/illustration_land.jpg" id="2_cj118"]
+[ext_resource type="LabelSettings" uid="uid://bwuyc50i50ojc" path="res://tres/default_label.tres" id="2_m31am"]
+[ext_resource type="FontFile" uid="uid://bkoa8x55oikbx" path="res://assets/fonts/PixelOperator8.ttf" id="3_qi27g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ejuq"]
+font = ExtResource("3_qi27g")
+font_size = 64
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+shadow_color = Color(1, 1, 1, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1kt2"]
+atlas = ExtResource("1_dhgbv")
+region = Rect2(0, 0, 30, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_memjc"]
+atlas = ExtResource("1_dhgbv")
+region = Rect2(0, 16, 30, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lnv4"]
+atlas = ExtResource("1_dhgbv")
+region = Rect2(0, 32, 30, 14)
+
+[node name="Canvas" type="CanvasLayer"]
+script = ExtResource("1_rgsfm")
+
+[node name="Illustration" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -66.7008
+offset_bottom = 66.7008
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cj118")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 191.0
+grow_horizontal = 2
+text = "The Lambda Knight"
+label_settings = SubResource("LabelSettings_5ejuq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PixelScaler" type="Control" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/PixelScaler"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -25.0
+offset_right = 15.0
+offset_bottom = 25.0
+
+[node name="Button_Continue" type="TextureButton" parent="Buttons/PixelScaler/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_c1kt2")
+texture_pressed = SubResource("AtlasTexture_memjc")
+texture_hover = SubResource("AtlasTexture_5lnv4")
+
+[node name="Label" type="Label" parent="Buttons/PixelScaler/VBoxContainer/Button_Continue"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -6.0
+offset_right = 135.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "Continue"
+label_settings = ExtResource("2_m31am")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_New" type="TextureButton" parent="Buttons/PixelScaler/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_c1kt2")
+texture_pressed = SubResource("AtlasTexture_memjc")
+texture_hover = SubResource("AtlasTexture_5lnv4")
+
+[node name="Label" type="Label" parent="Buttons/PixelScaler/VBoxContainer/Button_New"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -6.0
+offset_right = 135.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "New Game"
+label_settings = ExtResource("2_m31am")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Quit" type="TextureButton" parent="Buttons/PixelScaler/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_c1kt2")
+texture_pressed = SubResource("AtlasTexture_memjc")
+texture_hover = SubResource("AtlasTexture_5lnv4")
+
+[node name="Label" type="Label" parent="Buttons/PixelScaler/VBoxContainer/Button_Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -6.0
+offset_right = 135.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "Quit"
+label_settings = ExtResource("2_m31am")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Buttons/PixelScaler/VBoxContainer/Button_Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Buttons/PixelScaler/VBoxContainer/Button_New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="Buttons/PixelScaler/VBoxContainer/Button_Quit" to="." method="_on_quit_pressed"]

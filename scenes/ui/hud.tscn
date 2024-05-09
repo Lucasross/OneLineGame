@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dmgbaqkbj6css"]
+[gd_scene load_steps=34 format=3 uid="uid://dmgbaqkbj6css"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_43nt0"]
 [ext_resource type="Texture2D" uid="uid://brdl3fgmk3uu8" path="res://assets/sprites/UI/avatar_frame.png" id="2_6b1qd"]
@@ -44,6 +44,18 @@ region = Rect2(15, 0, 14, 14)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymdt1"]
 atlas = ExtResource("20_or3vc")
 region = Rect2(30, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuo6b"]
+atlas = ExtResource("20_or3vc")
+region = Rect2(0, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u28g7"]
+atlas = ExtResource("20_or3vc")
+region = Rect2(30, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8oy4"]
+atlas = ExtResource("20_or3vc")
+region = Rect2(15, 0, 14, 14)
 
 [node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("health_bar", "experience_bar", "levelup_button", "skill_view")]
 script = ExtResource("1_43nt0")
@@ -390,9 +402,33 @@ texture_progress = ExtResource("2_6b1qd")
 [node name="Timer" type="Timer" parent="PotionHud/PixelScaler/TextureButton"]
 one_shot = true
 
+[node name="QuitHud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="PixelScaler" type="Control" parent="QuitHud"]
+anchors_preset = 0
+offset_left = -32.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 32.0
+scale = Vector2(5, 5)
+
+[node name="Quit" type="TextureButton" parent="QuitHud/PixelScaler"]
+layout_mode = 0
+offset_left = -14.0
+offset_bottom = 14.0
+texture_normal = SubResource("AtlasTexture_tuo6b")
+texture_pressed = SubResource("AtlasTexture_u28g7")
+texture_hover = SubResource("AtlasTexture_k8oy4")
+
 [connection signal="visibility_changed" from="SkillView" to="SkillView" method="_on_visibility_changed"]
 [connection signal="pressed" from="SkillView/PixelScaler/NinePatchRect/TextureButton" to="SkillView/PixelScaler/NinePatchRect/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="AvatarHud/AvatarFrame/PixelScaler/TextureButton" to="." method="_on_avatar_button_pressed"]
 [connection signal="pressed" from="AvatarHud/ButtonContainer/PixelScaler/TextureButton" to="." method="_on_level_button_pressed"]
 [connection signal="on_potion_request" from="PotionHud" to="." method="_on_potion_request"]
 [connection signal="pressed" from="PotionHud/PixelScaler/TextureButton" to="PotionHud" method="_on_button_pressed"]
+[connection signal="pressed" from="QuitHud/PixelScaler/Quit" to="." method="_on_quit_button_pressed"]

@@ -12,6 +12,8 @@ class_name PlayerDataSave
 	Data.Stat.Speed: 0,
 	Data.Stat.Regen: 0,
 	}
+@export var scene: Data.Scene = Data.Scene.forest
+@export var side: Data.Side = Data.Side.Left
 	
 func save():
 	return {
@@ -20,6 +22,8 @@ func save():
 		"skillPoint": skillPoint,
 		"potion_count": potion_count,
 		"stats": stats,
+		"scene": scene,
+		"side": side,
 	}
 
 func load(save_data):
@@ -27,6 +31,7 @@ func load(save_data):
 	level = save_data["level"]
 	skillPoint = save_data["skillPoint"]
 	potion_count = save_data["potion_count"]
-	
 	for i in save_data["stats"]:
 		stats[int(i)] = save_data["stats"][i]
+	scene = save_data["scene"]
+	side = save_data["side"]

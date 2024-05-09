@@ -10,19 +10,19 @@ var experience:
 	set(value):
 		playerData.experience = value
 		save_player()
-var level: int = 1 :
+var level: int:
 	get:
 		return playerData.level
 	set(value):
 		playerData.level = value
 		save_player()
-var skillPoint: int = 0 :
+var skillPoint: int:
 	get:
 		return playerData.skillPoint
 	set(value):
 		playerData.skillPoint = value
 		save_player()
-var potion_count: int = 0:
+var potion_count: int:
 	get:
 		return playerData.potion_count
 	set(value):
@@ -34,17 +34,28 @@ func get_stat(stat: Data.Stat):
 func inc_stat(stat: Data.Stat, value: int):
 	playerData.stats[stat] += value
 	save_player()
+var scene: Data.Scene:
+	get:
+		return playerData.scene
+	set(value):
+		playerData.scene = value
+		save_player()
+var side: Data.Side:
+	get:
+		return playerData.side
+	set(value):
+		playerData.side = value
+		save_player()
+
+func _ready():
+	if FileAccess.file_exists("user://player.save"):
+		load_player()
 
 func save_player():
 	var save_file = FileAccess.open("user://player.save", FileAccess.WRITE)
 	var json_string = JSON.stringify(playerData.save())
 	save_file.store_line(json_string)
 	
-func _ready():
-	if FileAccess.file_exists("user://player.save"):
-		load_player()
-	#pass
-
 func load_player():
 	var save_file = FileAccess.open("user://player.save", FileAccess.READ)
 	var json_string = save_file.get_line()
@@ -59,6 +70,5 @@ func load_player():
 	playerData.load(save_data)
 
 func reset():
-	print("test")
 	playerData = PlayerDataSave.new()
 	save_player()

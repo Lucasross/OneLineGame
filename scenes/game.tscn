@@ -1,19 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bimgyg22wyx11"]
+[gd_scene load_steps=2 format=3 uid="uid://bimgyg22wyx11"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_0i128"]
-[ext_resource type="PackedScene" uid="uid://ba3gghryqmcah" path="res://scenes/player.tscn" id="1_qjjjg"]
-[ext_resource type="PackedScene" uid="uid://dmgbaqkbj6css" path="res://scenes/ui/hud.tscn" id="4_ogaoc"]
+[ext_resource type="PackedScene" uid="uid://b2vy4rf16c5nt" path="res://scenes/main/Menu.tscn" id="2_rbfsa"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_0i128")
-start_side = -1
 
-[node name="Player" parent="." instance=ExtResource("1_qjjjg")]
-unique_name_in_owner = true
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -23)
-zoom = Vector2(4, 4)
-position_smoothing_speed = 25.0
-
-[node name="HUD" parent="." instance=ExtResource("4_ogaoc")]
+[node name="Menu" parent="." instance=ExtResource("2_rbfsa")]

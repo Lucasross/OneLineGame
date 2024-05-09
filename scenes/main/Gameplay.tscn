@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://8b6wgs0xtgdg"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_v5au2"]
+[ext_resource type="PackedScene" uid="uid://ba3gghryqmcah" path="res://scenes/player.tscn" id="2_hwdvw"]
+[ext_resource type="PackedScene" uid="uid://dmgbaqkbj6css" path="res://scenes/ui/hud.tscn" id="3_4ev86"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_v5au2")
+
+[node name="Player" parent="." instance=ExtResource("2_hwdvw")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -23)
+zoom = Vector2(4, 4)
+position_smoothing_speed = 25.0
+
+[node name="HUD" parent="." instance=ExtResource("3_4ev86")]
