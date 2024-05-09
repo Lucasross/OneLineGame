@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjas27qirxw4x"]
 
-[ext_resource type="Texture2D" uid="uid://cmpkx77jeu3jw" path="res://assets/sprites/world_tileset.png" id="1_elc2w"]
+[ext_resource type="Texture2D" uid="uid://cmpkx77jeu3jw" path="res://assets/sprites/tileset/simple_world_tileset.png" id="1_elc2w"]
 [ext_resource type="Script" path="res://scripts/tuto/panel.gd" id="1_ty3dg"]
 [ext_resource type="FontFile" uid="uid://bkoa8x55oikbx" path="res://assets/fonts/PixelOperator8.ttf" id="3_bs3po"]
 

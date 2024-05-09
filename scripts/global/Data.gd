@@ -9,11 +9,23 @@ enum Scene
 {
 	forest,
 	beach,
+	cave_1,
+	cave_2,
+	dungeon_1,
+	dungeon_2,
+	swamp1,
+	rock1,
+	desert1,
+	tower1,
+	tower2,
+	snow1,
+	snow2,
 }
 
 var scene_names: Dictionary = {
 	Scene.forest: "forest",
 	Scene.beach: "beach",
+	Scene.cave_1: "cave_1",
 }
 
 func get_scene_path(scene: Scene) -> String :
