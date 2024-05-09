@@ -20,6 +20,7 @@ func switch_scene(scene_ref: Data.Scene, old_scene: Node2D, target: Data.Side, c
 	var scene = load(Data.get_scene_path(scene_ref))
 	var instScene: Node = scene.instantiate()
 	player.position.x = instScene.get_portal(target).position.x + (30 * int(target) * -1)
+	player.position.y = instScene.get_portal(target).position.y + 16.5
 	if old_scene != null:
 		old_scene.queue_free()
 	get_tree().root.get_node("/root/Game/Gameplay").add_child(instScene)

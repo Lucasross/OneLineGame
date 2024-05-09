@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://gwv1pxlrebdv"]
+[gd_scene load_steps=8 format=3 uid="uid://gwv1pxlrebdv"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_3ukc4"]
 [ext_resource type="TileSet" uid="uid://bapkpl73jyjck" path="res://tres/world/cave.tres" id="2_jhtsu"]
@@ -7,17 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://c4b04o1ar87qo" path="res://scenes/monster_area.tscn" id="5_1gpr0"]
 [ext_resource type="SpriteFrames" uid="uid://cyxqy6i3l7kmb" path="res://tres/monsters/slime_green.tres" id="6_t5j66"]
 [ext_resource type="SpriteFrames" uid="uid://crixqc0poiw30" path="res://tres/monsters/slime_red.tres" id="7_85wnd"]
-[ext_resource type="PackedScene" uid="uid://irbps74j7c5h" path="res://scenes/monster.tscn" id="8_qwk6j"]
-[ext_resource type="Script" path="res://scripts/monster.gd" id="9_k8ct2"]
-[ext_resource type="AudioStream" uid="uid://b6u8kcbny6d5u" path="res://assets/sounds/hit.wav" id="10_n331x"]
-[ext_resource type="AudioStream" uid="uid://bqhrbin6l2lbu" path="res://assets/sounds/dead.wav" id="11_wevju"]
 
 [node name="cave_1" type="Node2D" node_paths=PackedStringArray("leftPortal", "rightPortal")]
 script = ExtResource("1_3ukc4")
 leftPortal = NodePath("Portal_Left")
 leftScene = 1
 rightPortal = NodePath("Portal_Right")
-rightScene = 2
+rightScene = 3
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_jhtsu")
@@ -37,199 +33,6 @@ position = Vector2(680, -15)
 
 [node name="MonsterArea" parent="." instance=ExtResource("5_1gpr0")]
 position = Vector2(104, 0)
-random = true
 quantity = 16
 level_range = Vector2i(3, 4)
 possibilities = Array[SpriteFrames]([ExtResource("6_t5j66"), ExtResource("7_85wnd")])
-
-[node name="slime_red (lv_2)" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("7_85wnd")
-level = 2
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="slime_green (lv_4)" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(32, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("6_t5j66")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="slime_red (lv_4)" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(64, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("7_85wnd")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17613" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(96, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("6_t5j66")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17614" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(128, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("7_85wnd")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="slime_green (lv_3)" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(160, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("6_t5j66")
-level = 3
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17615" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(192, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("7_85wnd")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17616" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(224, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("7_85wnd")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17617" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(256, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("6_t5j66")
-level = 3
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17618" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(288, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("6_t5j66")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17619" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(320, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("7_85wnd")
-level = 2
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17620" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(352, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("6_t5j66")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17621" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(384, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("6_t5j66")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17622" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(416, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("6_t5j66")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17623" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(448, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("7_85wnd")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[node name="@Area2D@17624" type="Area2D" parent="MonsterArea" instance=ExtResource("8_qwk6j")]
-position = Vector2(480, 0)
-collision_mask = 2
-script = ExtResource("9_k8ct2")
-sprite = ExtResource("7_85wnd")
-level = 4
-baseColor = Color(1, 1, 1, 1)
-damageColor = Color(0.84, 0.0756, 0.0756, 1)
-hitSound = ExtResource("10_n331x")
-deathSound = ExtResource("11_wevju")
-
-[connection signal="body_entered" from="MonsterArea/slime_red (lv_2)" to="MonsterArea/slime_red (lv_2)" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/slime_green (lv_4)" to="MonsterArea/slime_green (lv_4)" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/slime_red (lv_4)" to="MonsterArea/slime_red (lv_4)" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17613" to="MonsterArea/@Area2D@17613" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17614" to="MonsterArea/@Area2D@17614" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/slime_green (lv_3)" to="MonsterArea/slime_green (lv_3)" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17615" to="MonsterArea/@Area2D@17615" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17616" to="MonsterArea/@Area2D@17616" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17617" to="MonsterArea/@Area2D@17617" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17618" to="MonsterArea/@Area2D@17618" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17619" to="MonsterArea/@Area2D@17619" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17620" to="MonsterArea/@Area2D@17620" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17621" to="MonsterArea/@Area2D@17621" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17622" to="MonsterArea/@Area2D@17622" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17623" to="MonsterArea/@Area2D@17623" method="_on_player_entered"]
-[connection signal="body_entered" from="MonsterArea/@Area2D@17624" to="MonsterArea/@Area2D@17624" method="_on_player_entered"]

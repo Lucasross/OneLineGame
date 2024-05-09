@@ -12,7 +12,7 @@ class_name PlayerDataSave
 	Data.Stat.Speed: 0,
 	Data.Stat.Regen: 0,
 	}
-@export var scene: Data.Scene = Data.Scene.cave_1
+@export var scene: Data.Scene = Data.Scene.swamp_1
 @export var side: Data.Side = Data.Side.Left
 	
 func save():
