@@ -2,37 +2,37 @@
 
 [ext_resource type="Texture2D" uid="uid://b26hh56nqip1x" path="res://assets/sprites/monsters/slime_purple.png" id="1_j7f1u"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b25ji"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lujhb"]
 atlas = ExtResource("1_j7f1u")
-region = Rect2(0, 24, 24, 24)
+region = Rect2(0, 0, 24, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eeokc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e71n1"]
 atlas = ExtResource("1_j7f1u")
-region = Rect2(24, 24, 24, 24)
+region = Rect2(24, 0, 24, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_678ft"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wokxp"]
 atlas = ExtResource("1_j7f1u")
-region = Rect2(48, 24, 24, 24)
+region = Rect2(48, 0, 24, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gf7pg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxedh"]
 atlas = ExtResource("1_j7f1u")
-region = Rect2(72, 24, 24, 24)
+region = Rect2(72, 0, 24, 15)
 
 [resource]
 resource_name = "slime_red"
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b25ji")
+"texture": SubResource("AtlasTexture_lujhb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eeokc")
+"texture": SubResource("AtlasTexture_e71n1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_678ft")
+"texture": SubResource("AtlasTexture_wokxp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gf7pg")
+"texture": SubResource("AtlasTexture_wxedh")
 }],
 "loop": true,
 "name": &"idle",

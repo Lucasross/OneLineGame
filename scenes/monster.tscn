@@ -4,41 +4,41 @@
 [ext_resource type="AudioStream" uid="uid://b6u8kcbny6d5u" path="res://assets/sounds/hit.wav" id="2_oxalr"]
 [ext_resource type="AudioStream" uid="uid://bqhrbin6l2lbu" path="res://assets/sounds/dead.wav" id="3_d66sv"]
 [ext_resource type="Texture2D" uid="uid://di8ovmg016ma6" path="res://assets/sprites/UI/Monster_Lifebar_Outline.png" id="3_mfsyo"]
-[ext_resource type="Texture2D" uid="uid://xgiqcsuvfaj3" path="res://assets/sprites/animation/explosion.png" id="4_b0do5"]
 [ext_resource type="Texture2D" uid="uid://dg64wtms7i0gu" path="res://assets/sprites/UI/Monster_Lifebar.png" id="4_bpow3"]
+[ext_resource type="Texture2D" uid="uid://xgiqcsuvfaj3" path="res://assets/sprites/animation/explosion.png" id="4_dufg2"]
 [ext_resource type="Script" path="res://scripts/monster_health_bar.gd" id="5_s5d8c"]
 [ext_resource type="FontFile" uid="uid://bkoa8x55oikbx" path="res://assets/fonts/PixelOperator8.ttf" id="7_jiu7w"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i7et5"]
-atlas = ExtResource("4_b0do5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ehrn"]
+atlas = ExtResource("4_dufg2")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_is22w"]
-atlas = ExtResource("4_b0do5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yiuv"]
+atlas = ExtResource("4_dufg2")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c12rg"]
-atlas = ExtResource("4_b0do5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa7va"]
+atlas = ExtResource("4_dufg2")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dj7dm"]
-atlas = ExtResource("4_b0do5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygt6a"]
+atlas = ExtResource("4_dufg2")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bfql0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nib2i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i7et5")
+"texture": SubResource("AtlasTexture_2ehrn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_is22w")
+"texture": SubResource("AtlasTexture_6yiuv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c12rg")
+"texture": SubResource("AtlasTexture_wa7va")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dj7dm")
+"texture": SubResource("AtlasTexture_ygt6a")
 }, {
 "duration": 1.0,
 "texture": null
@@ -166,8 +166,8 @@ deathSound = ExtResource("3_d66sv")
 
 [node name="AnimatedSprite2D_die" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(0, -7)
-sprite_frames = SubResource("SpriteFrames_bfql0")
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_nib2i")
 animation = &"explosion"
 frame = 4
 frame_progress = 1.0
@@ -178,9 +178,9 @@ shape = SubResource("CircleShape2D_l7q1x")
 
 [node name="HealthBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("monster")]
 offset_left = -11.0
-offset_top = -18.0
+offset_top = -24.0
 offset_right = 11.0
-offset_bottom = -15.0
+offset_bottom = -21.0
 max_value = 1.0
 step = 0.05
 value = 1.0

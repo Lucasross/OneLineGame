@@ -18,6 +18,7 @@ signal onHealthChanged
 		if sprite != null:
 			var size = sprite.get_frame_texture("idle", 0).get_height()
 			animated_sprite.offset.y = (size / -2.0)
+			get_node("HealthBar").position.y = -size - 5
 
 @export_category("Data")
 @export var rank: Rank
