@@ -22,7 +22,7 @@ format = 2
 layer_0/name = "background"
 layer_0/z_index = -1
 layer_0/navigation_enabled = false
-layer_0/tile_data = PackedInt32Array(-327664, 3, 0, -65533, 1441795, 1, -131038, 3, 23)
+layer_0/tile_data = PackedInt32Array(-327664, 3, 0, -65533, 1441795, 1, -131038, 3, 23, -393223, 65536, 14, -393222, 65536, 14)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
