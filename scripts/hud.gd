@@ -21,7 +21,7 @@ func _on_avatar_button_pressed():
 
 func _on_potion_request():
 	PlayerData.potion_count -= 1
-	player.health += player.max_health * 0.8
+	player.health += player.max_health * 0.6
 
 func _on_quit_button_pressed():
 	PlayerData.save_player()

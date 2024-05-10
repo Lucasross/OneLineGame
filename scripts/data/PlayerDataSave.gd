@@ -12,7 +12,7 @@ class_name PlayerDataSave
 	Data.Stat.Speed: 0,
 	Data.Stat.Regen: 0,
 	}
-@export var scene: Data.Scene = Data.Scene.snow_1
+@export var scene: Data.Scene = Data.Scene.forest
 @export var side: Data.Side = Data.Side.Left
 	
 func save():

@@ -20,17 +20,17 @@ static func get_experience(x: int) -> int:
 static func get_health(x: int) -> int:
 	return int(polynom2(1.6, 44, 10, x))
 
-# 0.6x² * 1.46x + 7
+# 0.43x² * 2.45x + 10
 static func get_damage(x: int) -> int:
-	return int(polynom2(0.6, 1.46, 7, x))
+	return int(polynom2(0.43, 2.45, 10, x))
 	
 # 2.4x² * 2.3x + 20
 static func get_stat_damage(x: int) -> int:
 	return int(polynom2(2.4, 2.3, 20, x))
 	
-# 2.7x² * 6x + 91.3
+# 6.14x² * 100x + 320
 static func get_stat_health(x: int) -> int:
-	return int(polynom2(2.7, 6, 91.3, x))
+	return int(polynom2(6.14, 100, 320, x))
 
 # 0x² * 0.075x + 0
 static func get_stat_speed(x: float) -> float:
