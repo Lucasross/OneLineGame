@@ -19,7 +19,8 @@ enum Scene
 	tower_1, #14-15
 	tower_2, #15-16
 	snow_1, #17-18
-	snow_2, #19-20 RATON_SAN 25
+	snow_2, #19-20
+	snow_dungeon, #RATON-SAN 25
 }
 
 var scene_names: Dictionary = {
@@ -30,6 +31,13 @@ var scene_names: Dictionary = {
 	Scene.dungeon_1: "dungeon_1",
 	Scene.dungeon_2: "dungeon_2",
 	Scene.swamp_1: "swamp_1",
+	Scene.rock_1: "rock_1",
+	Scene.desert_1: "desert_1",
+	Scene.tower_1: "tower_1",
+	Scene.tower_2: "tower_2",
+	Scene.snow_1: "snow_1",
+	Scene.snow_2: "snow_2",
+	Scene.snow_dungeon: "snow_dungeon",
 }
 
 func get_scene_path(scene: Scene) -> String :
