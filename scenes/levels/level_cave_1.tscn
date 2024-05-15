@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://daxc2s6eyroke" path="res://scenes/levels/portal_left.tscn" id="3_mvjqc"]
 [ext_resource type="PackedScene" uid="uid://6nj3d642af8f" path="res://scenes/levels/portal_right.tscn" id="4_ena20"]
 [ext_resource type="PackedScene" uid="uid://c4b04o1ar87qo" path="res://scenes/monster_area.tscn" id="5_1gpr0"]
-[ext_resource type="SpriteFrames" uid="uid://cyxqy6i3l7kmb" path="res://tres/monsters/slime_green.tres" id="6_t5j66"]
-[ext_resource type="SpriteFrames" uid="uid://crixqc0poiw30" path="res://tres/monsters/slime_red.tres" id="7_85wnd"]
+[ext_resource type="SpriteFrames" uid="uid://ci7tq1csf3lwj" path="res://tres/monsters/slime_death.tres" id="6_n5ku6"]
+[ext_resource type="SpriteFrames" uid="uid://rugjgx4msrnt" path="res://tres/monsters/slime_acid.tres" id="7_4ajr6"]
 
 [node name="cave_1" type="Node2D" node_paths=PackedStringArray("leftPortal", "rightPortal")]
 script = ExtResource("1_3ukc4")
@@ -35,4 +35,4 @@ position = Vector2(680, -15)
 position = Vector2(104, 0)
 quantity = 16
 level_range = Vector2i(3, 4)
-possibilities = Array[SpriteFrames]([ExtResource("6_t5j66"), ExtResource("7_85wnd")])
+possibilities = Array[SpriteFrames]([ExtResource("6_n5ku6"), ExtResource("7_4ajr6")])

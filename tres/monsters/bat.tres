@@ -1,0 +1,47 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://186sdpb8ir0q"]
+
+[ext_resource type="Texture2D" uid="uid://bds468h12v20q" path="res://assets/sprites/monsters/bat.png" id="1_gp1ox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7img"]
+atlas = ExtResource("1_gp1ox")
+region = Rect2(0, 0, 80, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot6lk"]
+atlas = ExtResource("1_gp1ox")
+region = Rect2(80, 0, 80, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0fba"]
+atlas = ExtResource("1_gp1ox")
+region = Rect2(160, 0, 80, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83tj8"]
+atlas = ExtResource("1_gp1ox")
+region = Rect2(240, 0, 80, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqj62"]
+atlas = ExtResource("1_gp1ox")
+region = Rect2(320, 0, 80, 44)
+
+[resource]
+resource_name = "bat"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7img")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot6lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0fba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83tj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqj62")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
